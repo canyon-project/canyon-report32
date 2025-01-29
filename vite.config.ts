@@ -8,4 +8,26 @@ export default defineConfig({
       jsxImportSource: "@emotion/react",
     }),
   ],
+  build: {
+    target: "ES2022",
+    // 输出文件夹
+    outDir: "dist",
+    lib: {
+      entry: "src/components/report.tsx",
+      // 组件库名称
+      name: "canyon-report",
+      fileName: "canyon-report",
+      formats: ["es", "cjs"],
+    },
+    rollupOptions: {
+      external: [
+        "react",
+        "react-dom",
+        "monaco-editor",
+        "@monaco-editor/react",
+        "antd",
+        "@ant-design/icons",
+      ],
+    },
+  },
 });
