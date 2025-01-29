@@ -1,14 +1,14 @@
 {
   "name": "canyon-report32",
-  "version": "0.0.1-beta.5",
+  "version": "0.0.1-beta.6",
   "type": "module",
-  "main": "./dist/canyon-report.umd.cjs",
-  "module": "./dist/canyon-report.umd.cjs",
+  "main": "./dist/canyon-report.umd.js",
+  "module": "./dist/canyon-report.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/canyon-report.umd.cjs",
-      "import": "./dist/canyon-report.umd.cjs"
+      "require": "./dist/canyon-report.umd.js",
+      "import": "./dist/canyon-report.js"
     }
   },
   "files": [
@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp dist/canyon-report.umd.cjs dist/canyon-report.umd.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "prettier --write '**/*.{js,ts,jsx,tsx}'"

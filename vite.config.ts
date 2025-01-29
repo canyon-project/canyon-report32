@@ -20,7 +20,7 @@ export default defineConfig({
       // 组件库名称
       name: "CanyonReport",
       fileName: "canyon-report",
-      formats: ["umd"], // 打包为通用模块
+      formats: ["umd", "es"], // 打包为通用模块
     },
     rollupOptions: {
       external: [
