@@ -8,6 +8,9 @@ export default defineConfig({
       jsxImportSource: "@emotion/react",
     }),
   ],
+  define: {
+    "process.env.NODE_ENV": JSON.stringify("production"),
+  },
   build: {
     target: "ES2022",
     // 输出文件夹
@@ -15,9 +18,9 @@ export default defineConfig({
     lib: {
       entry: "src/components/report.tsx",
       // 组件库名称
-      name: "canyon-report",
+      name: "CanyonReport",
       fileName: "canyon-report",
-      formats: ["es", "cjs"],
+      formats: ["umd"], // 打包为通用模块
     },
     rollupOptions: {
       external: [
@@ -26,7 +29,7 @@ export default defineConfig({
         "monaco-editor",
         "@monaco-editor/react",
         "antd",
-        "@ant-design/icons",
+        // "@ant-design/icons",
       ],
     },
   },
