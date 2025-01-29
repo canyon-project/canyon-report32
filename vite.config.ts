@@ -27,7 +27,7 @@ export default defineConfig({
         "react",
         "react-dom",
         "monaco-editor",
-        "@monaco-editor/react",
+        // "@monaco-editor/react",
         "antd",
         // "@ant-design/icons",
       ],
