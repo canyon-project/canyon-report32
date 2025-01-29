@@ -1,7 +1,19 @@
 {
   "name": "canyon-report32",
-  "version": "0.0.1-beta.3",
+  "version": "0.0.1-beta.5",
   "type": "module",
+  "main": "./dist/canyon-report.umd.cjs",
+  "module": "./dist/canyon-report.umd.cjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/canyon-report.umd.cjs",
+      "import": "./dist/canyon-report.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
