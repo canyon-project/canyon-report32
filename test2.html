@@ -38,7 +38,7 @@
                 });
             } else {
                 const script = document.createElement("script");
-                script.src = `dynamic-data/${val}.js`;
+                script.src = 'dynamic-data/'+val+'.js';
                 script.onload = () => {
                     resolve({
                         fileCoverage: window[val].coverage,
