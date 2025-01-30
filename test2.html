@@ -17,45 +17,19 @@
     <script src="https://unpkg.com/@monaco-editor/loader@1.4.0/lib/umd/monaco-loader.min.js"></script>
 </head>
 <body>
-<div id="root">
-
-</div>
+<div id="root"></div>
 </body>
-<script>
-    // monaco_loader.init().then((monaco) => {
-    //     window.cn = monaco
-    //
-    // })
-</script>
-<!--<script src="./dist/canyon-report.umd.js"></script>-->
 <script src="https://unpkg.com/canyon-report32@0.0.1-beta.8/dist/canyon-report.umd.js"></script>
-<!--<script src="https://unpkg.com/canyon-report32@0.0.1-beta.5/dist/canyon-report.umd.cjs"></script>-->
 <script src="./mock/data.js">
 </script>
 <script type="text/babel">
-
-    // window.monaco = window.monaco || {}
-
-
-
-    const { createRoot } = ReactDOM
-    const { useEffect,useState } = React
-
-
-    // @ts-nocheck
-    // import Report from "canyon-report";
-    // import React, { useEffect, useState } from "react";
-
-    // 加载summary数据
-    // @ts-ignore
+    const { createRoot } = ReactDOM;
+    const { useEffect,useState } = React;
     const dataSource = window.data;
     const reportName = window.reportName;
     const date = window.date;
-    // 重要
-    // 通过动态引入js文件的方式加载数据，避免全量覆盖率source文件的加载导致内存占用过大。加载完成后，删除全局变量
     const dynamicLoadingSource = (val) => {
         return new Promise((resolve) => {
-            // 1.检查是否是文件
             if (!val.includes(".")) {
                 resolve({
                     fileCoverage: undefined,
@@ -67,9 +41,7 @@
                 script.src = `dynamic-data/${val}.js`;
                 script.onload = () => {
                     resolve({
-                        // @ts-ignore
                         fileCoverage: window[val].coverage,
-                        // @ts-ignore
                         fileContent: window[val].content,
                         fileCodeChange: [],
                     });
@@ -90,7 +62,6 @@
                 return r;
             });
         };
-
         return (
             <div className={"p-[10px] pb-0"}>
                 <div style={{ minHeight: "calc(100vh - 48px)" }}>
@@ -121,15 +92,8 @@
             </div>
         );
     }
-
-    // export default App;
-
-
-
     createRoot(document.getElementById("root")).render(
         <App />,
     );
-
-
 </script>
 </html>
